@@ -158,7 +158,7 @@ console.log(weight,businessDayFrom,bussinessDayTo,shippingCost)
       });
       
       await axios.post(
-          "http://localhost:5000/createproduct", formData,{
+        `${process.env.BACKEND_URL}/createproduct`, formData,{
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -302,6 +302,7 @@ console.log(weight,businessDayFrom,bussinessDayTo,shippingCost)
                     setProductCategory(e.target.value);
                   }}
                 >
+                  <option value="None">Category</option>
                   <option value="electronics">Electronics</option>
                   <option value="fashion">Fashion</option>
                   <option value="home&living">Home & Living</option>

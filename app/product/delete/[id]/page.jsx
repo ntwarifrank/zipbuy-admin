@@ -15,7 +15,7 @@ const [errorMeesage, setErrorMessage] = useState([]);
 
 async function fectProductData() {
   try {
-    const response = await axios.get(`http://localhost:5000/product/${id}`);
+    const response = await axios.get(`${process.env.BACKEND_URL}/product/${id}`);
     if (response) {
       setProductData(response.data.product);
     }

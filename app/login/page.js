@@ -23,7 +23,7 @@ const Login = () => {
     setTimeout( async() => {
       try {
       await axios
-        .post("http://localhost:5000/adminlogin", {
+        .post(`${process.env.BACKEND_URL}/adminlogin`, {
           email,
           password,
           confirmPassword,
