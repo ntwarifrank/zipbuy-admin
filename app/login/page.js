@@ -23,11 +23,7 @@ const Login = () => {
     setTimeout( async() => {
       try {
       await axios
-<<<<<<< HEAD
-        .post(`${process.env.NEXT_PUBLIC_NEXT_PUBLIC_BACKEND_URL}adminlogin`, {
-=======
-        .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/adminlogin`, {
->>>>>>> 5492ae28a0bbf858d7d77337d14c010359bcff6e
+        .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}adminlogin`, {
           email,
           password,
           confirmPassword,
