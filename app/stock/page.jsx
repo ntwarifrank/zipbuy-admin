@@ -11,7 +11,7 @@ const CheckStock = () => {
 
   async function fetchProduct() {
     try {
-      const response = await axios.get(`${process.env.BACKEND_URL}/allproducts`);
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/allproducts`);
       SetProducts(response.data.productsData);
     } catch (error) {
       SetErrorMessage(error.response.data.message || "There is error Accured");

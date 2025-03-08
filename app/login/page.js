@@ -19,11 +19,11 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true)
-
+ 
     setTimeout( async() => {
       try {
       await axios
-        .post(`${process.env.BACKEND_URL}/adminlogin`, {
+        .post(`${process.env.NEXT_PUBLIC_NEXT_PUBLIC_BACKEND_URL}/adminlogin`, {
           email,
           password,
           confirmPassword,

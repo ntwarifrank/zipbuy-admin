@@ -14,7 +14,7 @@ const [productData, setProductData] = useState([]);
 
 async function fectProductData() {
   try {
-    const response = await axios.get(`${process.env.BACKEND_URL}/product/${id}`);
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product/${id}`);
     if (response) {
       setProductData(response.data.product);
     }
@@ -134,7 +134,7 @@ useEffect(() => {
       }
 
       if (productImages.length > 0) {
-        await axios.put(`${process.env.BACKEND_URL}/updateproduct/${id}`, {
+        await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/updateproduct/${id}`, {
             productName,
             productPrice,
             productQuantity,

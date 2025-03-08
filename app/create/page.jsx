@@ -158,7 +158,7 @@ console.log(weight,businessDayFrom,bussinessDayTo,shippingCost)
       });
       
       await axios.post(
-        `${process.env.BACKEND_URL}/createproduct`, formData,{
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/createproduct`, formData,{
             headers: {
               "Content-Type": "multipart/form-data",
             },
