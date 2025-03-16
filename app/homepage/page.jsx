@@ -2,20 +2,46 @@
 import Layout from "../layout/page";
 import { useState, useEffect } from "react";
 import "./page.css"
+import AdminDataStore from "../userDataController";
 
 const HomePage = () => {
     const [date, setDate] = useState("");
+    const {AdminData, setAdminData, distroyAdminData} = AdminDataStore();
 
     useEffect(() => {
       const today = new Date();
       setDate(today.toDateString()); 
     }, []);
+
+    useEffect(() => {
+      const fetchUser = async () => {
+        try {
+          const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/adminprofile`, {
+            withCredentials: true,
+          });
+          if (!res.data.user.user){
+            setCartIds([])
+          }
+           setUserData(res.data.user.user);
+          console.log("User data:", res.data.user.user);
+        } catch (error) {
+          console.error("Error fetching user:", error);
+          router.push("/login");
+        }
+      };
+    
+      fetchUser(); 
+    }, []);
+
   return (
     <div>
       <Layout>
         <div>
-          <div className="w-full py-3 px-2 bg-blue-950 text-white text-xl font-bold rounded-t-lg">
-            HomePage
+          <div className="w-full py-3 px-2 flex justify-between bg-blue-950 text-white text-xl font-bold rounded-t-lg">
+            <div>HomePage</div>
+            <div>
+              <button className="p-2 rounded-md hover:bg-white">Logout</button>
+            </div>
           </div>
 
           <div className="homedata py-10 w-[100%] pr-12 pl-2 cursor-pointer">

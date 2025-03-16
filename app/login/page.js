@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
+import Cookies from "js-cookie"
 
 const Login = () => {
   const router = useRouter();
@@ -30,6 +31,7 @@ const Login = () => {
         })
         .then((response) => {
           if (response.status == 201) {
+            Cookies.set("token", response.data.message, { expires: 1}); 
             router.push("/homepage");
             setLoading(false);
           }

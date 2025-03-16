@@ -193,7 +193,7 @@ console.log(weight,businessDayFrom,bussinessDayTo,shippingCost)
           </div>
 
           <div className="w-[90%] min-h-fit h-fit p-4 bg-white shadow-md rounded-lg text-gray-700">
-            {errorMeesage.length > 0 ? (
+            {errorMeesage && errorMeesage.length > 0 ? (
               <p className="text-red-500">{errorMeesage}</p>
             ) : (
               ""
