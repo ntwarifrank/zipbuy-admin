@@ -56,7 +56,7 @@ const CheckStock = () => {
                   <td className="py-3 w-[20%]">
                     <Image
                       src={product.productImages[0]}
-                      className="w-28 h-16 rounded-md"
+                      className="w-28 h-22 rounded-md"
                       width={20}
                       height={20}
                       alt="product image"
